@@ -40,7 +40,46 @@ describe("JSX", function() {
 
   });
 
-  it("extracts an event", function() {
+  it("camelizes attrs", function() {
+
+    var node = <div my-attr="hello"></div>;
+    expect(node.attrs.myAttr).toBe('hello');
+
+  });
+
+  it("extracts attrsNS", function() {
+
+    var node = (
+      <svg xmlns:my-link="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"></svg>
+    );
+    expect(node.attrsNS.myLink).toBe('http://www.w3.org/1999/xlink');
+
+  });
+
+  it("camelizes attrsNS", function() {
+
+    var node = (
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"></svg>
+    );
+    expect(node.attrsNS.xlink).toBe('http://www.w3.org/1999/xlink');
+
+  });
+
+  it("extracts data", function() {
+
+    var node = <div data-value="hello"></div>;
+    expect(node.data.value).toBe('hello');
+
+  });
+
+  it("camelizes data", function() {
+
+    var node = <div data-my-value="hello"></div>;
+    expect(node.data.myValue).toBe('hello');
+
+  });
+
+  it("extracts events", function() {
 
     var doSomething = function() {};
     var node = <div on-click={doSomething}>test</div>;
