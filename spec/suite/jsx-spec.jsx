@@ -189,8 +189,26 @@ describe("JSX", function() {
 
   });
 
+  it("handles function as tag name", function() {
+
+    var Button = function() {};
+
+    var node = (
+      <Button x="100">
+        <span></span>
+      </Button>
+    );
+
+    expect(node.tagName).toBe(Button);
+    expect(node.children[0].tagName).toBe('span');
+
+  });
 
   it("handles namespaced tag name", function() {
+
+    var button = {
+      large: function() {}
+    };
 
     var node = (
       <button.large x="100">
@@ -198,11 +216,19 @@ describe("JSX", function() {
       </button.large>
     );
 
-    expect(node.tagName).toBe('button.large');
+    expect(node.tagName).toBe(button.large);
     expect(node.children[0].tagName).toBe('span');
 
   });
 
+  it("handles this in tag name", function() {
+
+    this.Button = function() {};
+
+    var node = (<this.Button>Hello World</this.Button>);
+    expect(node.tagName).toBe(this.Button);
+
+  });
 
   it("should handle self closing tags", function() {
 

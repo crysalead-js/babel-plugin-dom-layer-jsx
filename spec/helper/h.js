@@ -4,7 +4,7 @@ var Text = domLayer.Text;
 
 function h(tagName, attrs, children) {
   var attrs = attrs || {};
-  var tagName = (tagName || "div").toLowerCase();
+  var tagName = tagName || "div";
   if (children) {
     children = h.flatten(children);
     for(var i = 0, len = children.length; i < len; i++) {
