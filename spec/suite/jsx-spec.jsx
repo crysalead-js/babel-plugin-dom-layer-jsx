@@ -253,11 +253,11 @@ describe("JSX", function() {
   it("supports if", function() {
 
     function template(show) {
-      return node = (
+      return (
         <div>
-          <if condition={ show }>
+          <If condition={ show }>
             hello world
-          </if>
+          </If>
         </div>
       ).toHtml();
     }
@@ -270,11 +270,11 @@ describe("JSX", function() {
   it("supports foreach", function() {
 
     function template(items) {
-      return node = (
+      return (
         <div>
-          <for each="item" index="key" of={ items }>
+          <For each="item" index="key" of={ items }>
             { key }{ item }
-          </for>
+          </For>
         </div>
       ).toHtml();
     }
@@ -287,25 +287,25 @@ describe("JSX", function() {
   it("supports choose", function() {
 
     function template(test1, test2) {
-      return node = (
+      return (
         <div>
-          <choose>
-            <when condition={ test1 }>
+          <Choose>
+            <When condition={ test1 }>
               <span>IfBlock</span>
-            </when>
-            <when condition={ test2 }>
+            </When>
+            <When condition={ test2 }>
               <span>ElseIfBlock</span>
-            </when>
-            <otherwise>
+            </When>
+            <Otherwise>
               <span>ElseBlock</span>
-            </otherwise>
-          </choose>
+            </Otherwise>
+          </Choose>
 
-          <choose>
-            <when condition={true}>
+          <Choose>
+            <When condition={true}>
               <span>Block</span>
-            </when>
-          </choose>
+            </When>
+          </Choose>
         </div>
       ).toHtml();
     }
@@ -319,11 +319,11 @@ describe("JSX", function() {
   it("supports foreach", function() {
 
     function template(items) {
-      return node = (
+      return (
         <div>
-          <for each="item" index="key" of={ items }>
+          <For each="item" index="key" of={ items }>
             { key }{ item }
-          </for>
+          </For>
         </div>
       ).toHtml();
     }
@@ -336,11 +336,11 @@ describe("JSX", function() {
   it("supports foreach on objects", function() {
 
     function template(items) {
-      return node = (
+      return (
         <div>
-          <for each="item" index="key" of={ items }>
-            { key }{ item }
-          </for>
+          <For each="key" of={ Object.keys(items) }>
+            { key }{ items[key] }
+          </For>
         </div>
       ).toHtml();
     }
@@ -353,13 +353,13 @@ describe("JSX", function() {
   it("supports nested blocks", function() {
 
     function template(items1, items2) {
-      return node = (
+      return (
         <div>
-          <for each="item1" index="key1" of={ items1 }>
-            <for each="item2" index="key2" of={ items2 }>
+          <For each="item1" index="key1" of={ items1 }>
+            <For each="item2" index="key2" of={ items2 }>
               { key1 }{ item1 }:{ key2 }{ item2 }
-            </for>
-          </for>
+            </For>
+          </For>
         </div>
       ).toHtml();
     }
@@ -374,13 +374,13 @@ describe("JSX", function() {
   it("supports overriding", function() {
 
     function template(items1, items2) {
-      return node = (
+      return (
         <div>
-          <for each="item" index="key" of={ items1 }>
-            <for each="item" index="key" of={ items2 }>
+          <For each="item" index="key" of={ items1 }>
+            <For each="item" index="key" of={ items2 }>
               { key }{ item }
-            </for>
-          </for>
+            </For>
+          </For>
         </div>
       ).toHtml();
     }

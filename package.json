@@ -18,12 +18,13 @@
   "dependencies": {
     "babel-core": "^6.8.0",
     "babel-plugin-syntax-jsx": "^6.8.0",
-    "camel-case": "^1.2.2"
+    "camel-case": "^1.2.2",
+    "jsx-control-statements": "^3.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "chai-kahlan": "^1.0.4",
-    "dom-layer": "^0.2.9",
+    "dom-layer": "^0.3.0",
     "eslint": "^2.9.0",
     "jasmine-kahlan": "^1.0.2",
     "mocha": "^2.4.5"

@@ -18,45 +18,48 @@ And configure your `.babelrc` file like the following:
 
 ```
 {
-  "presets": [ "es2015", "stage-0" ],
-  "plugins": ["syntax-jsx", "dom-layer-jsx"]
+  "plugins": ["dom-layer-jsx"]
 }
 ```
 
 ## Syntax of Control Statements
 
-### if
+### If
 
 ```javascript
-<if condition={ true }>
+<If condition={ true }>
   <span>IfBlock</span>
-</if>
+</If>
 ```
 
-### for
+### For
 
+On an array of objects:
 ```javascript
-<for each="item" index="key" of={ items }>
+<For each="item" index="key" of={ items }>
   <span key={ item.id }>{ item.title } with key { key }</span>
-</for>
+</For>
 ```
 
-### choose
+On an object of objects:
+```javascript
+<For each="key" of={ Object.keys(items) }>
+  <span key={ items[key].id }>{ items[key].title }</span>
+</For>
+```
+
+### Choose
 
 ```javascript
-<choose>
-  <when condition={ test1 }>
+<Choose>
+  <When condition={ test1 }>
     <span>IfBlock</span>
-  </when>
-  <when condition={ test2 }>
+  </When>
+  <When condition={ test2 }>
     <span>ElseIfBlock</span>
-  </when>
-  <otherwise>
+  </When>
+  <Otherwise>
     <span>ElseBlock</span>
-  </otherwise>
-</choose>
+  </Otherwise>
+</Choose>
 ```
-
-## Acknowledgements
-
-- [jsx-control-statements](https://github.com/AlexGilleran/jsx-control-statements)
