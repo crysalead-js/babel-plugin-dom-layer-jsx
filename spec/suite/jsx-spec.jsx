@@ -81,6 +81,14 @@ describe("JSX", function() {
 
   it("extracts events", function() {
 
+    var node = <div onclick="alert('hello world')">test</div>;
+
+    expect(node.attrs.onclick).toBe("alert('hello world')");
+
+  });
+
+  it("extracts delegated events", function() {
+
     var doSomething = function() {};
     var node = <div on-click={doSomething}>test</div>;
 
@@ -88,7 +96,7 @@ describe("JSX", function() {
 
   });
 
-  it("supports this for events", function() {
+  it("supports this for delegated events", function() {
 
     this.doSomething = function() {};
     var node = <div on-click={this.doSomething}>test</div>;
@@ -97,7 +105,7 @@ describe("JSX", function() {
 
   });
 
-  it("extracts multiple events", function() {
+  it("extracts multiple delegated events", function() {
 
     var onClick = function() {};
     var onMouseOver = function() {};

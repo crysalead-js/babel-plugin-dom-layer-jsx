@@ -22,6 +22,7 @@
     "jsx-control-statements": "^3.1.2"
   },
   "devDependencies": {
+    "arr-flatten": "^1.0.1",
     "babel-cli": "^6.8.0",
     "chai-kahlan": "^1.0.4",
     "dom-layer": "^0.3.0",
