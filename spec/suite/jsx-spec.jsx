@@ -426,4 +426,32 @@ describe("JSX", function() {
 
   });
 
+  it("propagates the self context", function() {
+
+    function template(items) {
+      this.message = 'HelloWorld';
+      return (<div>{ this.message }</div>).toHtml();
+    }
+
+    expect(template([1, 1])).toBe('<div>HelloWorld</div>');
+
+  });
+
+  it("propagates the self context in control structures", function() {
+
+    function template(items) {
+      this.message = 'HelloWorld';
+      return (
+        <div>
+          <For each="item" of={ items }>
+            { this.message }
+          </For>
+        </div>
+      ).toHtml();
+    }
+
+    expect(template([1, 1])).toBe('<div>HelloWorldHelloWorld</div>');
+
+  });
+
 });
