@@ -454,4 +454,21 @@ describe("JSX", function() {
 
   });
 
+  it("support spread attributes", function() {
+
+    var param1 = 'p1';
+    var param2 = 'p2';
+
+    var params1 = {
+      attr1: 'value1',
+      attr2: 'value2'
+    }
+    var params2 = {
+      attr3: 'value3',
+      attr4: 'value4'
+    }
+    var node = <div param1={ param1 } {...params1}  param2={ param2 } {...params2}></div>;
+    expect(node.toHtml()).toBe('<div param1="p1" param2="p2" attr1="value1" attr2="value2" attr3="value3" attr4="value4"></div>');
+  });
+
 });
