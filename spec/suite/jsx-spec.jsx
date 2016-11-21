@@ -208,7 +208,7 @@ describe("JSX", function() {
     );
 
     expect(node.tagName).toBe(Button);
-    expect(node.children[0].tagName).toBe('span');
+    expect(node.children()[0].tagName).toBe('span');
 
   });
 
@@ -225,7 +225,7 @@ describe("JSX", function() {
     );
 
     expect(node.tagName).toBe(button.large);
-    expect(node.children[0].tagName).toBe('span');
+    expect(node.children()[0].tagName).toBe('span');
 
   });
 

@@ -36,7 +36,7 @@ function h(tagName, attrs, children) {
       }
     }
   }
-  if (children) {
+  if (Array.isArray(children)) {
     children = flatten(children);
     for(var i = 0, len = children.length; i < len; i++) {
       if (children[i] != null && !children[i].type) {
