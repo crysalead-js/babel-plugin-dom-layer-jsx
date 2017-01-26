@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-dom-layer-jsx",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Babeljs plugin for dom-layer JSX",
   "main": "lib/index.js",
   "repository": "https://github.com/crysalead/babel-plugin-dom-layer-jsx",
