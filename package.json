@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-dom-layer-jsx",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Babeljs plugin for dom-layer JSX",
   "main": "lib/index.js",
   "repository": "https://github.com/crysalead/babel-plugin-dom-layer-jsx",
@@ -16,18 +16,18 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "babel-core": "^6.18.2",
+    "babel-core": "^6.23.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "camel-case": "^3.0.0",
     "jsx-control-statements": "^3.1.5"
   },
   "devDependencies": {
     "arr-flatten": "^1.0.1",
-    "babel-cli": "^6.18.0",
+    "babel-cli": "^6.23.0",
     "chai-kahlan": "^1.0.4",
-    "dom-layer": "^0.4.0",
-    "eslint": "^3.10.2",
+    "dom-layer": "^0.7.2",
+    "eslint": "^3.17.1",
     "jasmine-kahlan": "^1.0.2",
-    "mocha": "^3.1.2"
+    "mocha": "^3.2.0"
   }
 }
