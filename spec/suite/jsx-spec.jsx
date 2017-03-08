@@ -33,6 +33,20 @@ describe("JSX", function() {
 
   });
 
+  it("extracts props", function() {
+
+    var node = <div prop:value="hello"></div>;
+    expect(node.props.value).toBe('hello');
+
+  });
+
+  it("camelizes props", function() {
+
+    var node = <div prop:my-value="hello"></div>;
+    expect(node.props.myValue).toBe('hello');
+
+  });
+
   it("extracts attrs", function() {
 
     var node = <div xmlns="http://www.w3.org/2000/svg" dir="ltr"></div>;
@@ -67,15 +81,29 @@ describe("JSX", function() {
 
   it("extracts data", function() {
 
-    var node = <div data-value="hello"></div>;
+    var node = <div data:value="hello"></div>;
     expect(node.data.value).toBe('hello');
 
   });
 
   it("camelizes data", function() {
 
-    var node = <div data-my-value="hello"></div>;
+    var node = <div data:my-value="hello"></div>;
     expect(node.data.myValue).toBe('hello');
+
+  });
+
+  it("extracts params", function() {
+
+    var node = <div param:value="hello"></div>;
+    expect(node.params.value).toBe('hello');
+
+  });
+
+  it("camelizes params", function() {
+
+    var node = <div param:my-value="hello"></div>;
+    expect(node.params.myValue).toBe('hello');
 
   });
 
@@ -90,7 +118,7 @@ describe("JSX", function() {
   it("extracts delegated events", function() {
 
     var doSomething = function() {};
-    var node = <div on-click={doSomething}>test</div>;
+    var node = <div on:click={doSomething}>test</div>;
 
     expect(node.events.onclick).toBe(doSomething);
 
@@ -99,7 +127,7 @@ describe("JSX", function() {
   it("supports this for delegated events", function() {
 
     this.doSomething = function() {};
-    var node = <div on-click={this.doSomething}>test</div>;
+    var node = <div on:click={this.doSomething}>test</div>;
 
     expect(node.events.onclick).toBe(this.doSomething);
 
@@ -109,7 +137,7 @@ describe("JSX", function() {
 
     var onClick = function() {};
     var onMouseOver = function() {};
-    var node = <div on-click={onClick} on-mouseover={onMouseOver}>test</div>;
+    var node = <div on:click={onClick} on:mouseover={onMouseOver}>test</div>;
 
     expect(node.events.onclick).toBe(onClick);
     expect(node.events.onmouseover).toBe(onMouseOver);
