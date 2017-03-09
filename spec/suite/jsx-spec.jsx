@@ -118,7 +118,7 @@ describe("JSX", function() {
   it("extracts delegated events", function() {
 
     var doSomething = function() {};
-    var node = <div on:click={doSomething}>test</div>;
+    var node = <div event:onclick={doSomething}>test</div>;
 
     expect(node.events.onclick).toBe(doSomething);
 
@@ -127,7 +127,7 @@ describe("JSX", function() {
   it("supports this for delegated events", function() {
 
     this.doSomething = function() {};
-    var node = <div on:click={this.doSomething}>test</div>;
+    var node = <div event:onclick={this.doSomething}>test</div>;
 
     expect(node.events.onclick).toBe(this.doSomething);
 
@@ -137,7 +137,7 @@ describe("JSX", function() {
 
     var onClick = function() {};
     var onMouseOver = function() {};
-    var node = <div on:click={onClick} on:mouseover={onMouseOver}>test</div>;
+    var node = <div event:onclick={onClick} event:onmouseover={onMouseOver}>test</div>;
 
     expect(node.events.onclick).toBe(onClick);
     expect(node.events.onmouseover).toBe(onMouseOver);
