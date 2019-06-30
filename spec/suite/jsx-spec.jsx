@@ -499,4 +499,10 @@ describe("JSX", function() {
     expect(node.toHtml()).toBe('<div param1="p1" param2="p2" attr1="value1" attr2="value2" attr3="value3" attr4="value4"></div>');
   });
 
+  it("support fragments", function() {
+    var node = <><div>test1</div><div>test2</div></>;
+    expect(node[0].toHtml()).toBe('<div>test1</div>');
+    expect(node[1].toHtml()).toBe('<div>test2</div>');
+  });
+
 });
