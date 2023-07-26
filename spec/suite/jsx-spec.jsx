@@ -47,6 +47,27 @@ describe("JSX", function() {
 
   });
 
+  it("doesn't camelizes innerHTML", function() {
+
+    var node = <div prop:innerHTML="hello"></div>;
+    expect(node.props.innerHTML).toBe('hello');
+
+  });
+
+  it("doesn't camelizes outerHTML", function() {
+
+    var node = <div prop:outerHTML="hello"></div>;
+    expect(node.props.outerHTML).toBe('hello');
+
+  });
+
+  it("doesn't camelizes namespaceURI", function() {
+
+    var node = <div prop:namespaceURI="hello"></div>;
+    expect(node.props.namespaceURI).toBe('hello');
+
+  });
+
   it("extracts attrs", function() {
 
     var node = <div xmlns="http://www.w3.org/2000/svg" dir="ltr"></div>;

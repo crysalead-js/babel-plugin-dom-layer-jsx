@@ -16,19 +16,19 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/helper-builder-react-jsx": "^7.3.0",
-    "@babel/plugin-syntax-jsx": "^7.2.0",
-    "camel-case": "^3.0.0"
+    "@babel/core": "^7.22.9",
+    "@babel/helper-builder-react-jsx": "^7.22.5",
+    "@babel/plugin-syntax-jsx": "^7.22.5",
+    "camel-case": "3.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/register": "^7.4.4",
+    "@babel/cli": "^7.22.9",
+    "@babel/register": "^7.22.5",
     "arr-flatten": "^1.1.0",
-    "chai-kahlan": "^2.0.0",
-    "dom-layer": "^0.7.11",
-    "eslint": "^6.0.1",
+    "chai-kahlan": "^2.0.1",
+    "dom-layer": "^0.7.16",
+    "eslint": "^8.45.0",
     "jasmine-kahlan": "^1.0.2",
-    "mocha": "^6.1.4"
+    "mocha": "^10.2.0"
   }
 }
